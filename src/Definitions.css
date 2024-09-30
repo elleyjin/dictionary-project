@@ -1,0 +1,15 @@
+.Definitions {
+  margin-top: 50px;
+}
+
+.Definitions h3 {
+  font-size: 18px;
+  color: gray;
+  opacity: 0.8;
+  /* margin: 20px 0; */
+}
+
+.Definitions p {
+  line-height: 1;
+  margin: 5px 0;
+}

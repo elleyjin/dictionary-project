@@ -1,6 +1,8 @@
 import React from "react";
 import Definitions from "./Definitions";
 
+import "./Results.css";
+
 export default function Results(props) {
   console.log(props.result);
   const phonetic = props.result.phonetic;
