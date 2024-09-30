@@ -1,4 +1,4 @@
-// import logo from "./logo.svg";
+// import "bootstrap/dist/css/bootstrap.css";
 import Dictionary from "./Dictionary";
 import "./App.css";
 
