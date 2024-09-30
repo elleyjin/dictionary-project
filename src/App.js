@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Dictionary />
+        <Dictionary defaultWord="sunrise" />
       </header>
     </div>
   );

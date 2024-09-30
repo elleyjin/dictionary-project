@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
 
-export default function Dictionary() {
-  const [word, setWord] = useState("");
+export default function Dictionary(props) {
+  const [word, setWord] = useState(props.defaultWord);
   const [data, setData] = useState("");
+  //   const [load, setLoad] = useState(false);
+
+  console.log(word);
 
   function handleResponse(response) {
     setData(response.data[0]);
@@ -13,6 +16,7 @@ export default function Dictionary() {
   function handleSubmit(event) {
     event.preventDefault();
     apiCall();
+    // setLoad(true);
   }
 
   function apiCall() {
