@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import Results from "./Results";
 
 export default function Dictionary() {
+  const [word, setWord] = useState("");
+  const [data, setData] = useState("");
+
+  function handleResponse(response) {
+    setData(response.data[0]);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    apiCall();
+  }
+
+  function apiCall() {
+    const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleWordChange(event) {
+    setWord(event.target.value);
+  }
+
   return (
     <div className="Dictionary container-fluid">
       <nav className="navbar navbar-light bg-light ">
-        <form className="form-inline d-flex">
+        <form className="form-inline d-flex" onSubmit={handleSubmit}>
           <input
             className="form-control mr-sm-2"
             type="search"
             placeholder="Search word"
+            onChange={handleWordChange}
           />
           <button
             className="btn btn-outline-dark my-2 my-sm-0"
@@ -25,17 +49,7 @@ export default function Dictionary() {
           <button className="btn btn-outline-dark">Chi</button>
         </div>
       </nav>
-      <h1>sunset</h1>
-      <div>
-        <h2>oxford dictionary</h2>
-        <h3>noun | pro.nun.cia.tion</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          vehicula, odio quis condimentum imperdiet, nisl risus iaculis neque,
-          faucibus facilisis orci mi at mi. Aliquam quis mi est.
-        </p>
-      </div>
-      <hr />
+      <Results result={data} />
     </div>
   );
 }
