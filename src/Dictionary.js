@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import MariamWebsterData from "./MariamWebsterData";
 
 export default function Dictionary(props) {
   const [word, setWord] = useState(props.defaultWord);
   const [data, setData] = useState("");
-  //   const [load, setLoad] = useState(false);
 
-  console.log(word);
+  const [mariamWebsterData, setMariamWebsterData] = useState("");
+
+  //   const [load, setLoad] = useState(false);
 
   function handleResponse(response) {
     setData(response.data[0]);
+  }
+
+  function handleMariamWebsterApiResponse(response) {
+    // console.log(response.data);
+
+    setMariamWebsterData(response.data);
   }
 
   function handleSubmit(event) {
@@ -21,7 +29,15 @@ export default function Dictionary(props) {
 
   function apiCall() {
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+
+    const mariamWebsterApiDictionaryKey = `b6561181-094f-4cd4-8a6f-53401bf58fbb`;
+
+    const mariamWebsterApiUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${mariamWebsterApiDictionaryKey}
+    `;
+
     axios.get(apiUrl).then(handleResponse);
+
+    axios.get(mariamWebsterApiUrl).then(handleMariamWebsterApiResponse);
   }
 
   function handleWordChange(event) {
@@ -54,6 +70,8 @@ export default function Dictionary(props) {
         </div>
       </nav>
       <Results result={data} />
+      <MariamWebsterData result={mariamWebsterData} />
+      <hr />
     </div>
   );
 }

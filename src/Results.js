@@ -4,7 +4,7 @@ import Definitions from "./Definitions";
 import "./Results.css";
 
 export default function Results(props) {
-  console.log(props.result);
+  // console.log(props.result);
   const phonetic = props.result.phonetic;
 
   if (props.result) {
@@ -21,12 +21,11 @@ export default function Results(props) {
             );
           })}
         </div>
-
-        <hr />
-        <div></div>
       </div>
     );
   } else {
-    return null;
+    return (
+      <div className="welcome">Welcome! Type a word to start the search!</div>
+    );
   }
 }

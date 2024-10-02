@@ -1,12 +1,8 @@
-.Definitions {
-  margin-top: 50px;
-}
-
-.Definitions h3 {
+.Definitions .definitions h3 {
   font-size: 18px;
   color: gray;
   opacity: 0.8;
-  /* margin: 20px 0; */
+  margin: 15px 0;
 }
 
 .Definitions p {
