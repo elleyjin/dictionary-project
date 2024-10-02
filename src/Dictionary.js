@@ -9,22 +9,24 @@ export default function Dictionary(props) {
 
   const [mariamWebsterData, setMariamWebsterData] = useState("");
 
-  //   const [load, setLoad] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  function load() {
+    setLoaded(true);
+    apiCall();
+  }
 
   function handleResponse(response) {
     setData(response.data[0]);
   }
 
   function handleMariamWebsterApiResponse(response) {
-    // console.log(response.data);
-
     setMariamWebsterData(response.data);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     apiCall();
-    // setLoad(true);
   }
 
   function apiCall() {
@@ -44,34 +46,38 @@ export default function Dictionary(props) {
     setWord(event.target.value);
   }
 
-  return (
-    <div className="Dictionary container-fluid">
-      <nav className="navbar navbar-light bg-light ">
-        <form className="form-inline d-flex" onSubmit={handleSubmit}>
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search word"
-            onChange={handleWordChange}
-          />
-          <button
-            className="btn btn-outline-dark my-2 my-sm-0"
-            type="submit"
-            placeholder="search"
-          >
-            Search
-          </button>
-        </form>
-        <div className="Languages">
-          <button className="btn btn-outline-dark">Eng</button>
-          {/* another components */}
-          <button className="btn btn-outline-dark">Kor</button>
-          <button className="btn btn-outline-dark">Chi</button>
-        </div>
-      </nav>
-      <Results result={data} />
-      <MariamWebsterData result={mariamWebsterData} />
-      <hr />
-    </div>
-  );
+  if (loaded) {
+    return (
+      <div className="Dictionary container-fluid">
+        <nav className="navbar navbar-light bg-light ">
+          <form className="form-inline d-flex" onSubmit={handleSubmit}>
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search word"
+              onChange={handleWordChange}
+            />
+            <button
+              className="btn btn-outline-dark my-2 my-sm-0"
+              type="submit"
+              placeholder="search"
+            >
+              Search
+            </button>
+          </form>
+          <div className="Languages">
+            <button className="btn btn-outline-dark">Eng</button>
+            {/* another components */}
+            <button className="btn btn-outline-dark">Kor</button>
+            <button className="btn btn-outline-dark">Chi</button>
+          </div>
+        </nav>
+        <Results result={data} />
+        <MariamWebsterData result={mariamWebsterData} />
+        <hr />
+      </div>
+    );
+  } else {
+    load();
+  }
 }

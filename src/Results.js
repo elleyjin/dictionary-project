@@ -9,10 +9,10 @@ export default function Results(props) {
 
   if (props.result) {
     return (
-      <div className="Results">
+      <section className="Results">
         <h1>{props.result.word}</h1>
         <div className="definitions-container">
-          <h2>wikitionary dictionary</h2>
+          <h2>wikitionary</h2>
           {props.result.meanings.map(function (meaning, index) {
             return (
               <div key={index}>
@@ -21,7 +21,7 @@ export default function Results(props) {
             );
           })}
         </div>
-      </div>
+      </section>
     );
   } else {
     return (

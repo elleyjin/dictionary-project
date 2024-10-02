@@ -16,11 +16,9 @@ export default function Definitions(props) {
           if (index < 3) {
             return (
               <div key={index}>
-                <p>{definition.definition}</p>
+                <p className="definition-meaning">: {definition.definition}</p>
                 {definition.example && (
-                  <p>
-                    <strong>example</strong> {definition.example}
-                  </p>
+                  <p className="definition-example">{definition.example}</p>
                 )}
               </div>
             );

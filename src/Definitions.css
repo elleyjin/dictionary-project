@@ -1,11 +1,5 @@
-.Definitions .definitions h3 {
-  font-size: 18px;
-  color: gray;
-  opacity: 0.8;
-  margin: 15px 0;
-}
-
-.Definitions p {
-  line-height: 1;
-  margin: 5px 0;
+.Definitions .definition-example {
+  font-size: 22px;
+  font-style: italic;
+  margin: 20px 0;
 }
