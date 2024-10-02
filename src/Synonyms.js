@@ -1,0 +1,29 @@
+import React from "react";
+import "./Synonyms.css";
+
+export default function Synonyms(props) {
+  console.log(props.synonym);
+
+  if (props.synonym) {
+    return (
+      <section className="Synonyms">
+        <h4>synonym</h4>
+        <div className="row">
+          {props.synonym.meanings.map(function (meaning, index) {
+            return (
+              <div className="synonym col col-5" key={index}>
+                <ul>
+                  {meaning.synonyms.map(function (synonym, i) {
+                    return <li>{synonym}</li>;
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    );
+  } else {
+    return null;
+  }
+}

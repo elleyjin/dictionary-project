@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
 import MariamWebsterData from "./MariamWebsterData";
+import Synonyms from "./Synonyms";
 
 export default function Dictionary(props) {
   const [word, setWord] = useState(props.defaultWord);
@@ -48,7 +49,7 @@ export default function Dictionary(props) {
 
   if (loaded) {
     return (
-      <div className="Dictionary container-fluid">
+      <section className="Dictionary container-fluid">
         <nav className="navbar navbar-light bg-light ">
           <form className="form-inline d-flex" onSubmit={handleSubmit}>
             <input
@@ -65,17 +66,12 @@ export default function Dictionary(props) {
               Search
             </button>
           </form>
-          <div className="Languages">
-            <button className="btn btn-outline-dark">Eng</button>
-            {/* another components */}
-            <button className="btn btn-outline-dark">Kor</button>
-            <button className="btn btn-outline-dark">Chi</button>
-          </div>
         </nav>
         <Results result={data} />
         <MariamWebsterData result={mariamWebsterData} />
         <hr />
-      </div>
+        <Synonyms synonym={data} />
+      </section>
     );
   } else {
     load();

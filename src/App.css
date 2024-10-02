@@ -1,10 +1,19 @@
 .App {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .App header {
   color: #61666a;
+}
+
+.App nav {
+  padding: 20px;
+}
+
+.App input {
+  width: 300px;
+  padding: 10px;
 }
 
 .App footer {

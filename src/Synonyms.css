@@ -1,0 +1,9 @@
+.Synonyms li {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 19px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+}
