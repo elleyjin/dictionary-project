@@ -1,0 +1,24 @@
+import React from "react";
+
+export default function Gallery(props) {
+  console.log(props.images.photos);
+
+  if (props.images) {
+    return (
+      <section className="Gallery">
+        <h4>gallery</h4>
+        <div className="row">
+          {props.images.photos.map((image, index) => {
+            return (
+              <div className="col-4" key={index}>
+                <img src={image.src.landscape} alt={image.alt} />
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    );
+  } else {
+    return null;
+  }
+}

@@ -3,13 +3,13 @@ import axios from "axios";
 import Results from "./Results";
 import MariamWebsterData from "./MariamWebsterData";
 import Synonyms from "./Synonyms";
+import Gallery from "./Gallery";
 
 export default function Dictionary(props) {
   const [word, setWord] = useState(props.defaultWord);
   const [data, setData] = useState("");
-
   const [mariamWebsterData, setMariamWebsterData] = useState("");
-
+  const [image, setImage] = useState("");
   const [loaded, setLoaded] = useState(false);
 
   function load() {
@@ -30,6 +30,10 @@ export default function Dictionary(props) {
     apiCall();
   }
 
+  function handleImageResponse(response) {
+    setImage(response.data);
+  }
+
   function apiCall() {
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
@@ -38,9 +42,15 @@ export default function Dictionary(props) {
     const mariamWebsterApiUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${mariamWebsterApiDictionaryKey}
     `;
 
+    const sheCodesImageApiKey = `aed3fabf26t4afa48435e0ea0oed7b6e`;
+
+    const sheCodesImageApiUrl = `https://api.shecodes.io/images/v1/search?query=${word}&key=${sheCodesImageApiKey}`;
+
     axios.get(apiUrl).then(handleResponse);
 
     axios.get(mariamWebsterApiUrl).then(handleMariamWebsterApiResponse);
+
+    axios.get(sheCodesImageApiUrl).then(handleImageResponse);
   }
 
   function handleWordChange(event) {
@@ -55,7 +65,7 @@ export default function Dictionary(props) {
             <input
               className="form-control mr-sm-2"
               type="search"
-              placeholder="Search word"
+              value={word}
               onChange={handleWordChange}
             />
             <button
@@ -71,6 +81,7 @@ export default function Dictionary(props) {
         <MariamWebsterData result={mariamWebsterData} />
         <hr />
         <Synonyms synonym={data} />
+        <Gallery images={image} />
       </section>
     );
   } else {

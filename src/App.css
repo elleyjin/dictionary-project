@@ -8,18 +8,29 @@
 }
 
 .App nav {
-  padding: 20px;
+  margin-top: 10px;
+  padding: 40px 30px;
 }
 
 .App input {
-  width: 300px;
+  width: 100%;
   padding: 10px;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+.App .form-inline {
+  display: flex;
+  width: 100%;
 }
 
 .App footer {
-  margin: 30px auto;
+  margin: 30px auto 0;
   padding-right: 15px;
   text-align: right;
+  background: #a9c0b6;
+  padding: 20px 15px;
+  opacity: 0.9;
 }
 
 .App h2 {
@@ -39,5 +50,5 @@
 .App .definition-meaning {
   line-height: 1.2;
   margin: 5px 0;
-  font-size: 20px;
+  font-size: 22px;
 }

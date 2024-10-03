@@ -3,8 +3,6 @@ import React from "react";
 import "./Definitions.css";
 
 export default function Definitions(props) {
-  console.log(props.meanings);
-
   return (
     <section className="Definitions">
       <div className="definitions">
@@ -15,7 +13,7 @@ export default function Definitions(props) {
           // definition = props.meanings.definitions
           if (index < 3) {
             return (
-              <div key={index}>
+              <div className="definition-group" key={index}>
                 <p className="definition-meaning">: {definition.definition}</p>
                 {definition.example && (
                   <p className="definition-example">{definition.example}</p>

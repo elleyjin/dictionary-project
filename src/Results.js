@@ -1,10 +1,10 @@
 import React from "react";
 import Definitions from "./Definitions";
+// import Phonetics from "./Phonetics";
 
 import "./Results.css";
 
 export default function Results(props) {
-  // console.log(props.result);
   const phonetic = props.result.phonetic;
 
   if (props.result) {
@@ -13,6 +13,7 @@ export default function Results(props) {
         <h1>{props.result.word}</h1>
         <div className="definitions-container">
           <h2>wikitionary</h2>
+          {/* <Phonetics /> */}
           {props.result.meanings.map(function (meaning, index) {
             return (
               <div key={index}>

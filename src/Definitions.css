@@ -1,5 +1,11 @@
 .Definitions .definition-example {
   font-size: 22px;
   font-style: italic;
-  margin: 20px 0;
+  margin: 10px;
+  color: gray;
+}
+
+.Definitions .definition-group {
+  line-height: 1;
+  margin-bottom: 40px;
 }
