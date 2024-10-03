@@ -14,7 +14,11 @@ export default function Synonyms(props) {
               <div className="synonym col col-5" key={index}>
                 <ul>
                   {meaning.synonyms.map(function (synonym, i) {
-                    return <li>{synonym}</li>;
+                    if (i < 10) {
+                      return <li>{synonym}</li>;
+                    } else {
+                      return null;
+                    }
                   })}
                 </ul>
               </div>
