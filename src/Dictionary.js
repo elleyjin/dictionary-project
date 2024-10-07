@@ -36,20 +36,14 @@ export default function Dictionary(props) {
 
   function apiCall() {
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-
     const mariamWebsterApiDictionaryKey = `b6561181-094f-4cd4-8a6f-53401bf58fbb`;
-
     const mariamWebsterApiUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${mariamWebsterApiDictionaryKey}
     `;
-
     const sheCodesImageApiKey = `aed3fabf26t4afa48435e0ea0oed7b6e`;
-
     const sheCodesImageApiUrl = `https://api.shecodes.io/images/v1/search?query=${word}&key=${sheCodesImageApiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
-
     axios.get(mariamWebsterApiUrl).then(handleMariamWebsterApiResponse);
-
     axios.get(sheCodesImageApiUrl).then(handleImageResponse);
   }
 

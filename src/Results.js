@@ -10,7 +10,7 @@ export default function Results(props) {
       if (phonetics.audio) {
         return (
           <a href={phonetics.audio} target="_blank" rel="noreferrer">
-            <i class="fa-solid fa-play"> Listen</i>
+            <i className="fa-solid fa-play"> Listen</i>
           </a>
         );
       }
