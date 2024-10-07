@@ -1,5 +1,7 @@
-// import React from "react";
+import React from "react";
 
-// export default function Phonetics(props) {
-//   return "hello";
-// }
+export default function Phonetics(props) {
+  if (props.text) {
+    return <span>{props.text}</span>;
+  }
+}

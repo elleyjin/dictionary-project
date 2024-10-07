@@ -2,8 +2,6 @@ import React from "react";
 import "./Gallery.css";
 
 export default function Gallery(props) {
-  console.log(props.images.photos);
-
   if (props.images) {
     return (
       <section className="Gallery">

@@ -10,13 +10,29 @@
 }
 
 .Results h1 {
-  padding: 150px 10px;
   font-size: 65px;
   font-family: "Courgette", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
+.Results h2 {
+  display: inline-block;
+}
+
+.Results i {
+  display: inline-block;
+  border: 1px solid #838688;
+  border-radius: 50px;
+  padding: 10px;
+  color: #838688;
+  font-size: 15px;
+}
+
 .Results hr {
   margin-top: 80px;
+}
+
+.Results .main {
+  margin: 150px 15px;
 }

@@ -3,7 +3,6 @@ import "./MariamWebsterDefinitions.css";
 
 export default function MariamWebsterDefinitions(props) {
   // meanings = individual meanings with all info about the particular meaning
-  // console.log(props.meanings);
 
   return (
     <section className="MariamWebsterDefinitions">
