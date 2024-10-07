@@ -1,13 +1,18 @@
-.Gallery h4 {
-  margin: 30px 10px;
+.Gallery {
+  position: relative;
 }
 
-.Gallery .row {
-  gap: 0;
+.Gallery h4 {
+  margin: 30px 10px;
 }
 
 .Gallery img {
   width: 100%;
   margin-bottom: 10px;
   padding-left: 10px;
+}
+
+.Gallery img:hover {
+  opacity: 0.7;
+  transition: ease-in-out all 200ms;
 }

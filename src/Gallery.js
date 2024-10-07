@@ -12,11 +12,13 @@ export default function Gallery(props) {
           {props.images.photos.map((image, index) => {
             return (
               <div className="col col-4" key={index}>
-                <img
-                  src={image.src.landscape}
-                  alt={image.alt}
-                  className="image"
-                />
+                <a href={image.src.landscape} target="_blank" rel="noreferrer">
+                  <img
+                    src={image.src.landscape}
+                    alt={image.alt}
+                    className="image"
+                  />
+                </a>
               </div>
             );
           })}
