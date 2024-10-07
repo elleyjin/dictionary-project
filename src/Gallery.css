@@ -1,0 +1,13 @@
+.Gallery h4 {
+  margin: 30px 10px;
+}
+
+.Gallery .row {
+  gap: 0;
+}
+
+.Gallery img {
+  width: 100%;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}

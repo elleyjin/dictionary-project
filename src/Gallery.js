@@ -1,4 +1,5 @@
 import React from "react";
+import "./Gallery.css";
 
 export default function Gallery(props) {
   console.log(props.images.photos);
@@ -10,8 +11,12 @@ export default function Gallery(props) {
         <div className="row">
           {props.images.photos.map((image, index) => {
             return (
-              <div className="col-4" key={index}>
-                <img src={image.src.landscape} alt={image.alt} />
+              <div className="col col-4" key={index}>
+                <img
+                  src={image.src.landscape}
+                  alt={image.alt}
+                  className="image"
+                />
               </div>
             );
           })}

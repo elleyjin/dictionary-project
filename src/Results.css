@@ -11,7 +11,10 @@
 
 .Results h1 {
   padding: 150px 10px;
-  font-size: 60px;
+  font-size: 65px;
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .Results hr {
